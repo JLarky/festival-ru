@@ -1,0 +1,8 @@
+file_*
+*~
+/ru/*.txt*
+/en/*.txt*
+/ru/[m|M]akefile*
+/en/[m|M]akefile*
+/ru/*/*
+/en/*/*
