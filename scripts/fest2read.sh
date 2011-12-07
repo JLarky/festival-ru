@@ -1,7 +1,8 @@
+#!/bin/bash
 [[ -z $1 || -z $2 ]] && echo "usage $0: input output" && exit 1
 cat "$1" |sed -e s/\>//g -e s/\<//g -e s/\ \\.//g -e s/\\//\ /g -e s/–/\ /g -e s/«//g -e s/»//g |
-sed -e s/\.,/,/g |
-sed -e s/\ ,/,\ /g |
+# sed -e s/\.,/,/g |
+# sed -e s/\ ,/,\ /g |
 sed -e s/—/-/g |
 sed -e s/…/\./g |
 sed -e s/,-/\ /g |

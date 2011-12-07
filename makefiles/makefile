@@ -7,7 +7,8 @@ all: $(FILE_NAMES) $(MAKE_FILES) $(DONE_FILES)
 
 %/src.txt: %.txt
 	mkdir -p `dirname $@`
-	cp $< $@
+	# for ru we will use fest2read and cp for en
+	bash -c 'PWD=`pwd`; BN=`basename $$PWD`; [[ $$BN  == "ru" ]]' && ~/festival/scripts/fest2read.sh $< $@ || cp $< $@
 	rm -f `dirname $@`/.done
 
 %/.done: %/src.txt
