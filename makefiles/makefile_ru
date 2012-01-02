@@ -22,5 +22,5 @@ clean:
 	../../scripts/convfile_ru.sh $< $@ || echo
 
 .done.%: %
-	test -f $<.mp3 && touch $@ && eyeD3 -a "Festival/ru" -G Speech --set-encoding=utf8 -t "`basename $$PWD`" $(<).mp3
+	test -f $<.mp3 && touch $@ && eyeD3 -a "Festival/ru" -G Speech --set-encoding=utf8 -t "`basename $$PWD` — $(<)" $(<).mp3
 
